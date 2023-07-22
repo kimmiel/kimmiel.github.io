@@ -1,0 +1,53 @@
+// import react, { useEffect, useState } from "react";
+// const key = "AIzaSyCAtVr05aFuBDr243eW9kK5Hon_FKYgsjM";
+// const id = "UChJ5FTsHOu72_5OVx0rvsvQ";
+// const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${id}&type=video&eventType=upcoming&key=${key} `;
+// export const YTvideos = () => {
+//   const [allvideos, setAllvideos] = useState([]);
+
+//   fetch(url)
+//     .then((response) => {
+//       // console.log(response.json);
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log("data ", data); // x ""data"+ data"
+//       let videos = data.items;
+//       let totalResults = data.pageInfo.totalResults;
+
+//       console.log("data" + data + " totalResults : " + totalResults);
+//       if (totalResults > 0) {
+//         let count = 0;
+
+//         //get each videoid and add html,then grop to gether
+//         // for (videos of videos) {
+//           //youtubeVideoContainer.innerHTML+=`<img src="${video.snippet.thumbnails.medium.url}">`
+
+//           const videoId = data.items[count].id.videoId;
+//           //console.log("videoId"+videoId);
+//           setAllvideos(`https://www.youtube.com/embed/${videoId}`);
+//           //把所有html的code 加到 .html 的文檔中
+//           console.log("videoId " + videoId + " count: " + count);
+
+//         //   count++;
+//         // }
+//       }
+//     })
+//     .catch((err) => {
+//       console.log("rejected", err);
+//     });
+
+//   //   console.log(" videoGrop " +  allvideos);
+//   return (
+//     <div>
+//       {/* <h1>allvideos</h1> */}
+//       <iframe
+//         width="400"
+//         height="220"
+//         className="video"
+//         src={allvideos}
+//         title="youtude vidio"
+//       ></iframe>
+//     </div>
+//   );
+// };
