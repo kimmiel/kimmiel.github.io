@@ -1,4 +1,0 @@
-[submodule "frontend"]
-   path = frontend
-   url = https://github.com/kimmiel/kimmiel.github.io.git
-   
