@@ -13,9 +13,15 @@
 >#### rm -rf node_modules/
 >#### npm update
 >#### npm run dev
+>![这是图片](/img/Screenshot - 2023-08-20 02.48.25.png "Magic Gardens")
+>![这是图片](/img/Screenshot - 2023-08-20 02.48.56.png "Magic Gardens")
+>![这是图片](/img/Screenshot - 2023-08-20 02.49.53.png "Magic Gardens")
+>![这是图片](/img/Screenshot - 2023-08-20 02.51.50.png "Magic Gardens")
 ### 4.在frontend檔案中的終端機須序打下以下的commmand line
 >#### npm install
 >#### npm start
+>![这是图片](/img/Screenshot - 2023-08-20 02.52.34.png "Magic Gardens")
+>![这是图片](/img/Screenshot - 2023-08-20 02.53.04.png "Magic Gardens")
 ### 5.成功開啓網站
 
 # 網站使用方法:
