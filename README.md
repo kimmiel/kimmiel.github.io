@@ -7,11 +7,14 @@
 
 # 開啓步驟:
 -------------
->### 1.下載檔案
->### 2.打開終端機
->### 3.在backend打npm run dev
->### 5.在frontend打npm start
->### 6.成功開啓網站
+### 1.下載檔案
+### 2.打開終端機
+### 3.在backend打
+>#### rm -rf node_modules/
+>#### npm update
+>#### npm run dev
+### 5.在frontend打npm start
+### 6.成功開啓網站
 
 # 1 網站規劃 
 # -------------
