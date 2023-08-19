@@ -20,7 +20,7 @@
 ### 4.在frontend檔案中的終端機須序打下以下的commmand line
 >#### npm install
 >#### npm start
->![这是图片](/img/1_5 "Magic Gardens")
+>![这是图片](/img/1_5.png "Magic Gardens")
 >![这是图片](/img/1_6.png "Magic Gardens")
 ### 5.成功開啓網站
 
@@ -34,8 +34,9 @@
 >### Twitch Key: 1dzor0oyndgwy1nbxcm5by3yz08fw0
 >### Twitch Secret: wmkol61mxnpyiry633kxqfe8m3dktu
 >### Twitch Channel: skullrazor1
+>>![这是图片](/img/2_1.png "Magic Gardens")
 ### 4.待播影片會呈現在頁面
-
+>![这是图片](/img/2_2.png "Magic Gardens")
 # 1 網站規劃 
 
 ## 1.1 網站結構設計
