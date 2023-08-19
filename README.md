@@ -22,13 +22,13 @@
 ### 1.先在sign up 頁面注册
 ### 2.在login 頁面 login
 ### 3.在首頁的data欄位填入資料
->### 測試資料
+>### 可以傳入以下測試資料
 >### youtube key: AIzaSyAuuvfn_e76jh6EPxi7uIDFBfPj1HZJ7Ig
 >### Channel Id: UCIM92Ok_spNKLVB5TsgwseQ
 >### Twitch Key: 1dzor0oyndgwy1nbxcm5by3yz08fw0
 >### Twitch Secret: wmkol61mxnpyiry633kxqfe8m3dktu
 >### Twitch Channel: skullrazor1
-### 4.待播影片會呈現在
+### 4.待播影片會呈現在頁面
 
 # 1 網站規劃 
 
