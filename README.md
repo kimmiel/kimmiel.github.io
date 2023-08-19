@@ -8,7 +8,7 @@
 # 開啓步驟:
 
 ### 1.下載檔案
-### 2.打開終端機
+### 2.在終端機打開檔案
 ### 3.在backend檔案中的終端機須序打下以下的commmand line
 >#### rm -rf node_modules/
 >#### npm update
