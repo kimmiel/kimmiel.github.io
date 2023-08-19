@@ -35,7 +35,7 @@
 ## 1.1 網站結構設計
 ### 使用者流程圖(User Flowchart)
 ### 這網站為一個顯示 vtuber 直播和資訊的網站。首先使用者登入首頁時會進 入介紹網頁并且可以與顯示 vtuber 們即將直播時間的網頁,顯示 vtuber 們在其 他社交媒體發佈的訊息網頁這四和顯示 vtuber 們音樂作品的網頁,四個網頁之 間來回切換。在各個網頁中，使用者可以選擇網頁只顯示特定 vtuber 資訊。 ,網站串接 youtuber,twitter,...等網站的 data API，再篩選資料，最后將分析結 果呈現給使用者。
-![这是图片](/assets/img/philly-magic-garden.jpg "Magic Gardens")
+![这是图片](web繪圖.jpg "Magic Gardens")
 
 ## 1.2 軟體大概設計分解 前端
 ### 網頁外觀設計
