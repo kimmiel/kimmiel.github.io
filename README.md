@@ -9,12 +9,14 @@
 
 ### 1.下載檔案
 ### 2.打開終端機
-### 3.在backend打
+### 3.在backend檔案中的終端機須序打下以下的commmand line
 >#### rm -rf node_modules/
 >#### npm update
 >#### npm run dev
-### 5.在frontend打npm start
-### 6.成功開啓網站
+### 4.在frontend檔案中的終端機須序打下以下的commmand line
+>#### npm install
+>#### npm start
+### 5.成功開啓網站
 
 # 1 網站規劃 
 
