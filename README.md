@@ -34,7 +34,7 @@
 >### Twitch Key: 1dzor0oyndgwy1nbxcm5by3yz08fw0
 >### Twitch Secret: wmkol61mxnpyiry633kxqfe8m3dktu
 >### Twitch Channel: skullrazor1
->>![这是图片](/img/2_1.png "Magic Gardens")
+>>![这是图片](/img/2_1.jpg "Magic Gardens")
 ### 4.待播影片會呈現在頁面
 >![这是图片](/img/2_2.png "Magic Gardens")
 # 1 網站規劃 
