@@ -3,19 +3,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: 0;
 }
 
+body {
+  /* background: linear-gradient(to right, #A770EF, #CF8BF3, #FDB99B); */
+
+}
+
+.NewHome {}
+
 /* navber */
 .container {
   position: absolute;
   z-index: 100;
-  position: absolute;
   left: 85%;
 
 }
@@ -34,37 +40,32 @@
 
 /* login signup page */
 
-.loginSignup_left {
-  position: relative;
-  width: 40%;
-  /* 背影圖案 */
-  background-image: url("./插画.png");
-  background-repeat: no-repeat;
 
-}
 
-.loginSignup_right {
+.loginSignup {
   position: relative;
-  width: 60%;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(225, 225, 234);
+  /* background: linear-gradient(to left,yellow,red); */
+  background: linear-gradient(to right, #A770EF, #CF8BF3, #FDB99B);
 
 }
 
 .login h3 {
   font-size: 2rem;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Merriweather', serif;
   padding: 2rem 0rem;
+  text-align: center;
 }
 
 .signup h3 {
   font-size: 2rem;
   font-family: 'Merriweather', serif;
   padding: 2rem 0rem;
-
+  text-align: center;
 }
 
 label {
@@ -77,33 +78,54 @@ label {
 }
 
 button {
-  all: unset;
+  /* reset button style */
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0;
   cursor: pointer;
+
   margin-top: 1.5rem;
   font-family: 'Source Sans Pro', sans-seri;
   color: aliceblue;
-  background-color: rgb(0, 0, 0);
+  background-color: #A770EF;
   padding: 0.3rem 1rem;
   border-radius: 5%;
+
 }
 
-.button {
+.signup button {
   all: unset;
   cursor: pointer;
   margin-top: 1.5rem;
   font-family: 'Source Sans Pro', sans-seri;
   color: aliceblue;
-  background-color: rgb(0, 0, 0);
+  background-color: #A770EF;
   padding: 0.3rem 1rem;
   border-radius: 5%;
+
+}
+
+.login button {
+  all: unset;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  font-family: 'Source Sans Pro', sans-seri;
+  color: aliceblue;
+  background-color: #A770EF;
+  padding: 0.3rem 1rem;
+  border-radius: 5%;
+
 }
 
 
 input {
   all: unset;
   background-color: rgb(255, 255, 255);
+  border-bottom: 2px rgb(212, 212, 212) solid;
   border-radius: 5%;
-  padding: 0.3rem 1rem 0.3rem 0.5rem;
+  padding: 0.3rem 15rem 0.1rem 0.5rem;
 
 }
 
@@ -117,10 +139,7 @@ input::placeholder {
   margin-top: 0.7rem;
 }
 
-/* New Home */
-.NewHome {
-  margin: 3rem;
-}
+
 
 .video {
   /* 所有影片的style */
@@ -128,33 +147,46 @@ input::placeholder {
   border-radius: 5%;
 }
 
+/* 分頁左右 */
 .wrap {
   /*左右並排1*/
   display: flex;
-  position: relative;
   width: 100%;
+  position: relative;
+
 
 }
 
 .right {
   /*左右並排2*/
-  position: relative;
-  width: 80%;
-  height: 100vh;
-
+  /* 在右邊的必用absolute */
+  right: 0px;
+  position: absolute;
+  width: 75%;
+  padding-left: 3rem;
 }
 
 .left {
   /*左右並排2*/
-  position: relative;
-  width: 20%;
-  border-right: solid gray 1px;
+  /* 固定 */
+  position: fixed;
+  width: 25%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #A770EF, #CF8BF3, #FDB99B);
+  /* border-right: solid gray 1px; */
 }
+
+.rightInner {
+  margin-left: 2rem;
+}
+
+
 
 .Navigation h1 {
   padding: 2rem 1rem;
   font-size: 2rem;
   font-family: 'Roboto Mono', monospace;
+  
 }
 
 .Navigation p {
@@ -166,4 +198,203 @@ input::placeholder {
 
 .Navigation i {
   margin-right: 1rem;
+}
+
+/* 更新 */
+
+.login {
+
+  padding: 5rem 2rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3%;
+}
+
+.signup {
+
+  padding: 5rem 2rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3%;
+}
+
+button:hover {
+  /*在上面會改色*/
+  background-color: #caa2ff;
+}
+
+/* 内頁 */
+.create input {
+  font-size: 1rem;
+  border: 0.1rem solid rgb(184, 183, 183);
+  border-radius: 0.3rem;
+  margin: 1rem 0;
+  margin-right: 0.3rem;
+}
+
+.create h3 {
+  color: #9f9f9f;
+}
+
+.twtich h1 {
+  color: #9f9f9f;
+}
+
+.youtube h1 {
+  color: #9f9f9f;
+}
+
+.circle {
+  width: 2rem;
+  background-color: #A770EF;
+  border-radius: 50%;
+  /* 垂直置中 */
+  height: 2rem;
+  line-height: 2rem;
+  margin-right: 0.5rem;
+
+}
+.workout-details{
+width: 26rem;
+}
+.workout-details p {
+  color: #ffffff;
+}
+
+.circle p {
+  color: #ffffff;
+  text-align: center;
+  /* font-family: 'Lato', sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Roboto Slab', serif;
+}
+
+
+.YoutubeDatasBlock {
+  background-color: #ffa888;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.twichDatasBlock {
+  background-color: #ff8fa9;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+
+}
+
+.deleteBlock {
+  background-color: #e77be3;
+  border-radius: 1rem;
+
+}
+.deleteBlock span{
+  color: rgb(255, 255, 255);
+}
+
+.deleteBlock .blockInner {
+  /* 並列 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blockInner {
+  padding: 0.5rem 1rem;
+}
+
+.blockData {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+/* 導行 */
+.left h1 {
+  text-align: center;
+  color: #ffffff;
+  transform: scale(1.1, 1);
+  letter-spacing: 0.2rem;
+}
+
+.left p {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 2.2rem 30%;
+  color: #ffffff;
+
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.left a {
+  text-decoration: none;
+}
+
+.left p:hover {
+  background-color: #ffffff;
+  color: #A770EF;
+
+}
+
+.topNavigation {
+  display: flex;
+  flex-direction: row;
+  background-color: #A770EF;
+  padding: 1rem;
+  display: none;
+}
+
+.topNavigation p {
+  font-size: 0.9rem;
+  margin-left: 1.2rem;
+  color: #ffffff;
+}
+
+.topNavigation a {
+  text-decoration: none;
+}
+
+.topNavigation button {
+  /* reset button style */
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+}
+
+.topNavigation p {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 響應式 */
+@media(max-width:780px) {
+  .loginSignup {
+    background: none;
+  }
+
+
+  .Navigation h1 {
+    display: none;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .Navigation {
+    display: none;
+  }
+
+  .right_navbar {
+    display: none;
+  }
+
+  .topNavigation {
+
+    display: flex;
+  }
 }

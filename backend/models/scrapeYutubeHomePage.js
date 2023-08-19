@@ -20,7 +20,7 @@ async function scrape(url) {
     if (href != null) {//如果有video連結
       console.log(href);
       console.log(await object.getText());
-      
+      submitNewData(object)
       //console.log(await object.getAttribute("title"));
     }
   }
@@ -34,4 +34,25 @@ async function scrape(url) {
   driver.quit();
 }
 
-scrape("https://www.youtube.com/@UkiVioleta/streams");
+// scrape("https://www.youtube.com/@UkiVioleta/streams");//?
+
+//const fetchData
+
+const submitNewData=async (e)=>{
+ e.preventDefault()
+  const data={link,name}//?
+  const response=await fetch('/routes/data',{
+    method:'POST',
+    body:JSON.stringify(data),
+    headers:{
+      'Content-Type':'application/json'
+    }
+  })
+  const json =await response.json()
+  if(!response.ok){
+    setError(json.error)
+  }
+  if(response.ok){
+    console.log("new data added",json);
+  }
+}

@@ -13,6 +13,7 @@ const createToken = (_id) => {
 const loginUser = async (req, res) => {
   //ch n7 login 時對email, password 和創造token
   const { email, password } = req.body;
+   // res.json({mssg:email});
   try {
     //把用户資料加入database
     const user = await User.login(email, password); // login 是來自userModel的function

@@ -22,8 +22,8 @@ const WorkoutDetails = ({ workout }) => {
       method: "DELETE",
       //ch n15傳授权 下面是signature
       headers: {
-        'Authorization': `Bearer ${user.token}`,
-      }
+        Authorization: `Bearer ${user.token}`,
+      },
     });
 
     const json = await response.json(); //記下回應的文字
@@ -33,26 +33,74 @@ const WorkoutDetails = ({ workout }) => {
       dispatch({ type: "DELETE_WORKOUT", payload: json });
     }
   };
+  console.log("workout1 " + JSON.stringify(workout));
   return (
     <div className="workout-details">
-      <h4>{workout.title}</h4>
-      <p>
-        <strong>Load(kg):</strong>
-        {workout.load}
-      </p>
-      <p>
-        <strong>Reps:</strong>
-        {workout.reps}
-      </p>
-      {/* 用date-fns去排版以下日期 addSuffix後缀 eg xxday ago */}
-      <p>
-        {formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}
-      </p>
-      {/* ch14 material-symbols-outlined 是來自google icon libriy ,delete 也是來自libriy 的修件 */}
-      <span className="material-symbols-outlined" onClick={handleClick}>
-        delete
-      </span>
-      {/* onClick 按下之後會執行handleClickfunction   //ch 12 dele function*/}
+      {/* YoutubeDatasBlock */}
+      <div className="YoutubeDatasBlock">
+        <div className="blockInner">
+          <div className="blockData">
+            <div className="circle">
+              {" "}
+              <p>K</p>
+            </div>
+            <p>{workout.title}</p>
+          </div>
+          <div className="blockData">
+            <div className="circle">
+              {" "}
+              <p>I</p>
+            </div>
+            <p>{workout.load}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* twichDatasBlock */}
+      <div className="twichDatasBlock">
+        <div className="blockInner">
+          <div className="blockData">
+            <div className="circle">
+              {" "}
+              <p>K</p>
+            </div>
+            <p>{workout.reps}</p>
+          </div>
+
+          <div className="blockData">
+            <div className="circle">
+              {" "}
+              <p>S</p>
+            </div>
+            <p>{workout.twitchSecret}</p>
+          </div>
+
+          <div className="blockData">
+            <div className="circle">
+              {" "}
+              <p>N</p>
+            </div>
+            <p>{workout.twitchchannel}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* deleteBlock */}
+      <div className="deleteBlock">
+        <div className="blockInner">
+          {/* 用date-fns去排版以下日期 addSuffix後缀 eg xxday ago */}
+          <p>
+            {formatDistanceToNow(new Date(workout.createdAt), {
+              addSuffix: true,
+            })}
+          </p>
+          {/* ch14 material-symbols-outlined 是來自google icon libriy ,delete 也是來自libriy 的修件 */}
+          <span className="material-symbols-outlined" onClick={handleClick}>
+            delete
+          </span>
+          {/* onClick 按下之後會執行handleClickfunction   //ch 12 dele function*/}
+        </div>
+      </div>
     </div>
   );
 };
@@ -64,3 +112,9 @@ export default WorkoutDetails;
 // await ?
 // 一般來說await是在等待一個async函數的完成，因為async函數return一個Promise Object，所以await可以用於等待一個async的return值。注意!!await不僅用於等Promise Object它也可以接普通函數或是直接的變數。
 //日期排版
+
+// your youtube key :
+// Youtube Channel Id :
+//Your Twitch Key :
+//Twitch Secret :
+//Twitch Channel :

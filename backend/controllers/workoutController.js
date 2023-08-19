@@ -28,7 +28,7 @@ const getWorkout = async (req, res) => {
 //create new workout
 const createWorkout = async (req, res) => {
   // ch5 加上async变成異步
-  const { title, load, reps } = req.body; //ch5 設好req有咩屬性
+  const { title, load, reps, twitchSecret, twitchchannel } = req.body; //ch5 設好req有咩屬性
 
   //ch 13 改error message 傳出的信息
   let emptyFields = [];
@@ -45,6 +45,15 @@ const createWorkout = async (req, res) => {
   if (!reps) {
     emptyFields.push("reps");
   }
+
+  if (!twitchSecret) {
+    emptyFields.push("twitchSecret");
+  }
+
+  if (!twitchchannel) {
+    emptyFields.push("twitchchannel");
+  }
+
   if (emptyFields.length > 0) {
     // return error massege
     return res
@@ -55,7 +64,14 @@ const createWorkout = async (req, res) => {
   //add new doc to datatbase
   try {
     const user_id = req.user._id; //ch n17在middleware獲得id
-    const workout = await Workout.create({ title, load, reps, user_id }); //ch n17 user_id
+    const workout = await Workout.create({
+      title,
+      load,
+      reps,
+      twitchchannel,
+      twitchSecret,
+      user_id,
+    }); //ch n17 user_id
     res.status(200).json(workout); //回覆成功
   } catch (error) {
     //失败時catch会捉到error and return error message

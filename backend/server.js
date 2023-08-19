@@ -1,15 +1,17 @@
 //ch2 入門
 require("dotenv").config(); //令env的東西可以用
 
+//爬蟲
+// const scrape = require("../backend/models/scrapeYutubeHomePage");
 //1 開始建json npm init -y
 //2 安裝express npm install express
 // 3.1 在server中創建express應用程式
 const express = require("express");
 const mongoose = require("mongoose"); //ch.4
 const workoutRoutes = require("./routes/workouts.js"); //ch.3
-
-const userRoutes = require("./routes/user"); //ch.2 new 拿userRoutes(有理处理user登入登出功能的网址)
-
+const userRoutes = require("./routes/user");
+const dataRoutes = require("./routes/data"); //ch.2 new 拿userRoutes(有理处理user登入登出功能的网址)
+// const bodyParser = require('body-parser');
 const app = express(); //express app 啟動express
 
 //3.2 listen for requests(原本)
@@ -27,6 +29,10 @@ app.use((req, res, next) => {
   next(); //有next才能到下一個function
 });
 
+// app.use(bodyParser.urlencoded({
+//   extended: true
+// }));
+
 //對expresss做反应,即对前端做反应
 //routes
 //做網站分頁(原本)
@@ -37,6 +43,7 @@ app.use((req, res, next) => {
 //routes 改成ch3
 app.use("/api/workouts", workoutRoutes);
 app.use("/api/user", userRoutes);// ch new 2
+app.use("/api/data", dataRoutes);
 
 //ch 4 connect to database//npm install mongoose
 mongoose.set("strictQuery",false)//.set("strictQuery",false)严格模式 不会讀入格式不对的data

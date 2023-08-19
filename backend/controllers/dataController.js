@@ -1,12 +1,12 @@
 const Data = require("../models/dataModel"); //ch 6
 const mongoose = require("mongoose");
-
+const scrape = require("../models/scrapeYutubeHomePage"); //ch 6
 //get all datas
 const getDatas = async (req, res) => {
   //ch n17限制只能拿自己造的Data
-  const user_id = req.user.id;
-  //ch n17只能find自己造的Data  額外例子find({reps:20}),get所有reps:20的document
-  const datas = await Data.find({ user_id }).sort({ createdAt: -1 }); //按時間sort({createdAt: })降序顯示-1
+  // const user_id = req.user.id;
+  // //ch n17只能find自己造的Data  額外例子find({reps:20}),get所有reps:20的document
+  const datas = await Data.find({}).sort({ createdAt: -1 }); // const datas = await Data.find({ user_id }).sort({ createdAt: -1 }); //按時間sort({createdAt: })降序顯示-1
   res.status(200).json(datas);
 };
 
@@ -27,24 +27,23 @@ const getData = async (req, res) => {
 
 //create new data
 const createData = async (req, res) => {
+ // res.json({mssg:"sdcfdssd"});
   // ch5 加上async变成異步
-  const { title, load, reps } = req.body; //ch5 設好req有咩屬性
 
+  const { key , id } = req.body; //ch5 設好req有咩屬性
+  // res.json({mssg:key});
   //ch 13 改error message 傳出的信息
   let emptyFields = [];
 
-  // if title is emtype
-  if (!title) {
-    emptyFields.push("title"); //array.push = 加上
+  // if key is emtype
+  if (!key) {
+    emptyFields.push("key"); //array.push = 加上
   }
-  // if load is emtype
-  if (!load) {
-    emptyFields.push("load");
+  // if id is emtype
+  if (!id) {
+    emptyFields.push("id");
   }
-  // if reps is emtype
-  if (!reps) {
-    emptyFields.push("reps");
-  }
+
   if (emptyFields.length > 0) {
     // return error massege
     return res
@@ -54,9 +53,9 @@ const createData = async (req, res) => {
 
   //add new doc to datatbase
   try {
-    const user_id = req.user._id; //ch n17在middleware獲得id
-    const data = await Data.create({ title, load, reps, user_id }); //ch n17 user_id
-    res.status(200).json(Data); //回覆成功
+    // const user_id = req.user._id; //ch n17在middleware獲得id
+    const data = await Data.create({ key, id}); //ch n17 user_id //, user_id 
+    res.status(200).json(data); //回覆成功
   } catch (error) {
     //失败時catch会捉到error and return error message
     res.status(400).json({ error: error.message }); //回覆失败
@@ -99,6 +98,8 @@ const updateData = async (req, res) => {
 
   res.status(200).json(data); //表示運行正常
 };
+
+
 //外其他js檔也能用這function
 module.exports = {
   getData,

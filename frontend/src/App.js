@@ -1,8 +1,11 @@
 //1前端第一步安装之後 ch n16 Navigate用来redirect到其他page
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext"; //ch n16 一直和const { user } = useAuthContext();是一套的
-import { YTvideos } from "./hooks/getYoutudeApi";
 import NewHome from "./pages/NewHome"; //從pages/Home拿Home這function
+
+import  Streaming  from "./pages/streaming";
+import  Upcomeing  from "./pages/upcomeing";
+import  StreamDatas  from "./pages/streamDatas"
 import Navbar from "./components/Navbar.js";
 import Signup from "./pages/Signup"; //ch n9 滙入Signup function
 import Login from "./pages/login"; //ch n9 滙入login function
@@ -21,8 +24,23 @@ function App() {
           <Route
             path="/"
             element={user ? <NewHome /> : <Navigate to="/login" />}
-                     // YTvideos NewHome
-         />
+        
+          />
+          <Route
+            path="/streaming"
+            element={user ? <Streaming/> : <Navigate to="/login" />}
+
+          />
+          <Route
+            path="/upcomeing"
+            element={user ? <Upcomeing /> : <Navigate to="/login" />}
+        
+          />
+          <Route
+            path="/streamDatas"
+            element={user ? <StreamDatas /> : <Navigate to="/login" />}
+          />
+
           {/* ch n9 在加上login和signup的网址  ch 16n  如果login了不能到Login 和 Signup page,会直接連回home page**/}
           <Route
             path="/login"
@@ -32,6 +50,7 @@ function App() {
             path="/signup"
             element={!user ? <Signup /> : <Navigate to="/" />}
           />
+          
         </Routes>
       </BrowserRouter>
     </div>
