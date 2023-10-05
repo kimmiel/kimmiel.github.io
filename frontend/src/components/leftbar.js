@@ -10,7 +10,7 @@ import { useLogout } from "../hooks/useLogout"; //ch n11 get useLogout fountion
 export const LeftNavbar = () => {
   return (
     <div className="Navigation left">
-      <h1> Youtude vidio list </h1>
+      <h1> Youtube vidio list </h1>
 
       {/* 分頁 */}
       <Link to="/streaming">

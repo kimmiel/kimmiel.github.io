@@ -32,8 +32,8 @@ function App() {
 
           />
           <Route
-            path="/upcomeing"
-            element={user ? <Upcomeing /> : <Navigate to="/login" />}
+            path="/NewHome"
+            element={user ? <NewHome /> : <Navigate to="/login" />}
         
           />
           <Route

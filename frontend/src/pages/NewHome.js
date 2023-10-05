@@ -7,6 +7,13 @@ import { TwtichVideos } from "../components/TwitchApi";
 import { LeftNavbar } from "../components/leftbar";
 import { TopNavigation } from "../components/topNavigation";
 
+import React, { useRef } from "react";
+import { render } from "react-dom";
+// get our fontawesome imports
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { TopNavigatxion } from "../img/pex"
+
 import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout"; //ch n11 get useLogout fountion
 
@@ -16,6 +23,8 @@ import WorkoutForm from "../components/Workoutform.js"; //ch10
 const NewHome = () => {
   const [dates, setDates] = useState(null); //ch 11
   const { workouts, dispatch } = useWorkoutsContext(); //ch 11
+  const myRef = useRef < HTMLDivElement > null;
+
   //ch n15 如果登入才会向後端發請求
   const { user } = useAuthContext();
 
@@ -47,8 +56,22 @@ const NewHome = () => {
     logout();
   };
 
-  //youtude api
+  // 平滑滚动
+  const handleClickScroll = () => {
+    const element = document.getElementById("content");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
+  const handleClickScrollFillForm = () => {
+    const element = document.getElementById("Form");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  //youtude api
+  // function scroll(){                          {/* ??? */}}
   return (
     <div className="NewHome">
       <div className="wrap">
@@ -57,7 +80,7 @@ const NewHome = () => {
 
         <div className="right">
           {/* navbar */}
-          <TopNavigation/>
+          <TopNavigation />
           <div className="rightInner">
             {/* navbar */}
             <div className="right_navbar">
@@ -66,24 +89,94 @@ const NewHome = () => {
               <button onClick={handleClick}>Log out</button>
             </div>
             <div className="context">
-              {workouts &&
-                workouts.map((workout) => (
-                  <YTvideos workout={workout} key={workout._id} />
-                ))}
-              {workouts &&
-                workouts.map((workout) => (
-                  <TwtichVideos workout={workout} key={workout._id} />
-                ))}
+              <div className="fristPage">
+                <div className="fristPageInner">
+                  <div className="backImg">
+                    <div>
+                      <h1>Live Collection</h1>
+                      <p>
+                        Know for the first time that there are those streamer
+                        you like live now
+                      </p>
+                      <div className="start">
+                        <div>
+                          {/* <a href="#content">  */}
+                          <button onClick={handleClickScroll}>start</button>
+                          {/* </a>                      */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="content"></div>
+              <div className="intro">
+                <h1>follow steps below</h1>
+                <div className="introp">
+                  <p>
+                    Apply tour youtube and twitch api key. To fill in all stearm
+                    information.
+                  </p>
+                </div>
+              </div>
+              <div className="allStep">
+                <div className="step step1">
+                  <a href="https://developers.google.com/youtube/v3/getting-started?hl=zh-tw">
+                    <div className="stepImg1"></div>
+                  </a>
+                  <div className="stepInto">
+                    <p>
+                      <a href="https://developers.google.com/youtube/v3/getting-started?hl=zh-tw">
+                        apply youtube api key
+                      </a>
+                    </p>
+                  </div>
+                  <div className="introDetail">
+                    <p>
+                      youtube api can help you to To get <br /> youtube stream's
+                      information.
+                    </p>
+                  </div>
+                </div>
+                <div className="step step2">
+                  <a href="https://developers.google.com/youtube/v3/getting-started?hl=zh-tw">
+                    <div className="stepImg2"></div>
+                  </a>
+                  <div className="stepInto">
+                    <p>
+                      <a href="https://dev.twitch.tv/docs/api/get-started/">
+                        twitch api key and secret
+                      </a>
+                    </p>
+                  </div>
+                  <div className="introDetail">
+                    <p>
+                      twitch api can help you to To get <br /> twitch stream's
+                      information.
+                    </p>
+                  </div>
+                </div>
+                <div className="step step3">
+                  <Link to="/streamDatas">
+                    <div className="stepImg3"></div>
+                  </Link>
+                  <div className="stepInto">
+                    <p onClick={handleClickScrollFillForm}>Fill in the form</p>
+                  </div>
+                  <div className="introDetail">
+                    <p>
+                      {" "}
+                      The video to be played will be <br /> displayed on
+                      streaming page
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="fromAndStream" id="Form">
+                {/* add data */}
+                <WorkoutForm /> {/* ch 10 */}
+              </div>
             </div>
-            {/* add data */}
-            <div className="workouts">
-              {/* 單獨觸發workout並回傳資料名称 ch9*/}
-              {workouts &&
-                workouts.map((workout) => (
-                  <WorkoutDetails workout={workout} key={workout._id} />
-                ))}
-            </div>
-            <WorkoutForm /> {/* ch 10 */}
           </div>
         </div>
       </div>
@@ -94,3 +187,5 @@ export default NewHome; //令期他js可以用這function
 
 //*開網站時 記得前後端都開起来
 //看到ch2
+
+// 暫離

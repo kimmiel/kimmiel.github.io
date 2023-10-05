@@ -44,6 +44,11 @@ export const TopNavigation = () => {
   return (
     <div className="topNavigation">
       {/* <h1> Youtude vidio list </h1> */}
+      <Link to="/NewHome">
+        <p>
+          <i className="fa-brands fa-youtube"></i>Home
+        </p>
+      </Link>
 
       {/* 分頁 */}
       <Link to="/streaming">
@@ -52,11 +57,7 @@ export const TopNavigation = () => {
         </p>
       </Link>
 
-      <Link to="/upcomeing">
-        <p>
-          <i className="fa-brands fa-youtube"></i>Upcoming
-        </p>
-      </Link>
+
 
       <Link to="/streamDatas">
         <p>
@@ -64,7 +65,7 @@ export const TopNavigation = () => {
         </p>
       </Link>
 
-     <p> <button onClick={handleClick}>Log out</button></p>
+     {/* <p> <button onClick={handleClick}>Log out</button></p> */}
     </div>
   );
 };

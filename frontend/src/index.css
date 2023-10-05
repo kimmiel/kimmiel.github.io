@@ -5,6 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -13,10 +18,12 @@
 
 body {
   /* background: linear-gradient(to right, #A770EF, #CF8BF3, #FDB99B); */
-
+  /* position: relative; */
 }
 
-.NewHome {}
+.NewHome {
+  background-color: #A770EF;
+}
 
 /* navber */
 .container {
@@ -36,6 +43,12 @@ body {
   position: absolute;
   top: 0%;
   left: 85%;
+  z-index: 100;
+
+
+    animation-name: fade;
+    animation-duration: 1.5s;
+  
 }
 
 /* login signup page */
@@ -125,8 +138,13 @@ input {
   background-color: rgb(255, 255, 255);
   border-bottom: 2px rgb(212, 212, 212) solid;
   border-radius: 5%;
-  padding: 0.3rem 15rem 0.1rem 0.5rem;
+  width: 25rem;
+  padding: 0.3rem 0.5rem 0.1rem 0.5rem;
 
+}
+
+.secondLevel input {
+  width: 51.5rem;
 }
 
 input::placeholder {
@@ -144,22 +162,25 @@ input::placeholder {
 .video {
   /* 所有影片的style */
   margin: 1rem;
+  margin-left: 0;
   border-radius: 5%;
 }
 
 /* 分頁左右 */
 .wrap {
   /*左右並排1*/
-  display: flex;
+  /* display: flex;
   width: 100%;
   position: relative;
-
+ */
 
 }
 
 .right {
   /*左右並排2*/
   /* 在右邊的必用absolute */
+  display: flex;
+  justify-content: center;
   right: 0px;
   position: absolute;
   width: 75%;
@@ -172,12 +193,13 @@ input::placeholder {
   position: fixed;
   width: 25%;
   height: 100vh;
-  background: linear-gradient(to bottom, #A770EF, #CF8BF3, #FDB99B);
+  /* background: linear-gradient(to bottom, #A770EF, #CF8BF3, #FDB99B); */
+  background-color: #caa2ff;
   /* border-right: solid gray 1px; */
 }
 
 .rightInner {
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
 }
 
 
@@ -186,7 +208,7 @@ input::placeholder {
   padding: 2rem 1rem;
   font-size: 2rem;
   font-family: 'Roboto Mono', monospace;
-  
+
 }
 
 .Navigation p {
@@ -222,6 +244,247 @@ button:hover {
 }
 
 /* 内頁 */
+.fristPage {
+
+
+  width: 100%;
+  height: 100vh;
+  background-color: #351d1d;
+
+
+}
+
+.backImg {
+
+  /* 置中 */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+
+  /* -webkit-filter: brightness(0.2); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("img/pexels-lukas-590037.jpg");
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-size: cover;
+  /* animation-name: fade;
+  animation-duration: 2.5s; */
+
+  /* 動畫1.1 */
+  /* animation-name: fade;
+  animation-duration: 3s; */
+}
+
+.fristPageInner h1 {
+
+  font-size: 4rem;
+  color: #ffffff;
+  /* 動畫1.1 */
+  animation-name: fade;
+  animation-duration: 1.5s;
+
+
+}
+
+.fristPageInner p {
+
+
+  color: #ffffff;
+  /* 動畫1.1 */
+  animation-name: fade;
+  animation-duration: 1.5s;
+
+
+}
+
+.start {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation-name: fade;
+  animation-duration: 1.5s;
+
+}
+
+.fristPageInner button {
+
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: #A770EF
+}
+
+/* 動畫1.2 */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fromAndStream {
+  margin: 2rem 15rem;
+  margin-top: 5rem;
+  /* background-color: #000000; */
+  /* ??? */
+}
+
+.fromAndStream h1 {
+  color: #ffffff;
+}
+
+.intro {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  color: #3b3b3b;
+}
+
+.intro p {
+  font-size: 1.5rem;
+  color: #585858;
+}
+
+.introp {
+  margin-top: 2rem;
+}
+
+.allStep {
+  padding: 1rem 3rem;
+  background-color: #ececec;
+  /* 並排 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.step {
+
+
+
+  display: flex;
+  /* 垂直並排 */
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0rem 0rem 4rem 0rem;
+
+  background-color: #ffffff;
+
+
+}
+
+.step1 {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.step2 {
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+
+.step3 {
+  animation-name: fade;
+  animation-duration: 3.5s;
+}
+
+.stepImg1 {
+  height: 22rem;
+  width: 25rem;
+  /* border-radius: 50%; */
+  /* -webkit-filter: brightness(0.2); */
+  background-image: url("img/pexels-freestocksorg-34407.jpg");
+  /* og.jpg */
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-size: cover;
+
+}
+
+.stepImg2 {
+  height: 22rem;
+  width: 25rem;
+  /* border-radius: 50%; */
+  /* -webkit-filter: brightness(0.2); */
+  background-image: url("img/og.jpg");
+  /* og.jpg */
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-size: cover;
+
+}
+
+.stepImg3 {
+  height: 22rem;
+  width: 25rem;
+  /* border-radius: 50%; */
+  /* -webkit-filter: brightness(0.2); */
+  background-image: url("img/pexels-lukas-590037.jpg");
+  /* og.jpg */
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-size: cover;
+
+}
+
+.stepInto {
+  /* 置中 */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+
+}
+
+.stepInto a {
+  all: unset;
+}
+
+.stepInto p {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  color: rgb(10, 20, 65);
+
+
+}
+
+.stepInto p:hover {
+  color: #A770EF;
+}
+
+.introDetail {
+  margin-top: 1rem;
+color: #727272;
+}
+
+
 .create input {
   font-size: 1rem;
   border: 0.1rem solid rgb(184, 183, 183);
@@ -231,7 +494,7 @@ button:hover {
 }
 
 .create h3 {
-  color: #9f9f9f;
+  color: #6d6d74;
 }
 
 .twtich h1 {
@@ -243,21 +506,24 @@ button:hover {
 }
 
 .circle {
-  width: 2rem;
+  /* width: 2rem;
   background-color: #A770EF;
-  border-radius: 50%;
+  border-radius: 50%; */
   /* 垂直置中 */
-  height: 2rem;
+  /* height: 2rem;
   line-height: 2rem;
-  margin-right: 0.5rem;
+  margin-right: 0.5rem; */
 
 }
-.workout-details{
-width: 26rem;
+
+.workout-details {
+  margin: 1.5rem 0.5rem;
 }
+
 .workout-details p {
   color: #ffffff;
 }
+
 
 .circle p {
   color: #ffffff;
@@ -267,27 +533,56 @@ width: 26rem;
   font-family: 'Roboto Slab', serif;
 }
 
+.block {
+  width: 26rem;
+  background-color: #e3ceff;
+  border-radius: 1rem;
+}
 
 .YoutubeDatasBlock {
-  background-color: #ffa888;
+  /* background-color: #ffa888; */
   border-radius: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .twichDatasBlock {
-  background-color: #ff8fa9;
+  /* background-color: #ff8fa9; */
   border-radius: 1rem;
   margin-bottom: 0.5rem;
 
 }
 
 .deleteBlock {
-  background-color: #e77be3;
+  /* background-color: #e77be3; */
   border-radius: 1rem;
+}
+
+.deleteBlock p {
+  font-size: 0.3rem;
+}
+
+.deleteBlock span {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
 
 }
-.deleteBlock span{
-  color: rgb(255, 255, 255);
+
+.deleteBlock span:hover {
+
+  color: rgb(242, 239, 243);
+
+
+}
+
+.click {
+  text-align: right;
+  /* width: 9%;
+  padding: 0rem 0.6rem;
+  background-color: rgb(131, 131, 131); */
+  /* border: black 1px solid; */
+  /* border-radius: 0.3rem; */
 }
 
 .deleteBlock .blockInner {
@@ -296,8 +591,22 @@ width: 26rem;
   justify-content: space-between;
   align-items: center;
 }
+
 .blockInner {
   padding: 0.5rem 1rem;
+}
+
+.dataType {
+  font-size: 0.2rem;
+  width: 16%;
+  border-radius: 4rem;
+  padding: 0.2rem 0.3rem;
+  background-color: #c6c6c6;
+}
+
+.dataType p {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .blockData {
@@ -305,6 +614,11 @@ width: 26rem;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.channelName p {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2rem;
 }
 
 
@@ -337,17 +651,55 @@ width: 26rem;
 }
 
 .topNavigation {
+  position: absolute;
+  top: 0;
+  z-index: 100;
   display: flex;
-  flex-direction: row;
-  background-color: #A770EF;
-  padding: 1rem;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #A770EF; */
+  margin: 2rem;
   display: none;
+
+
+    animation-name: fade;
+    animation-duration: 1.5s;
+  
+}
+
+/* body{
+width: 100%;
+height: 100%;
+background-color: #000000;
+
+} */
+
+.BackColorStream {
+
+  height: 250vh;
+
+  z-index: -1;
+  background-color: #000000;
+
+
+
+}
+
+.BackColorStreamData {
+  height: 250vh;
+
+  z-index: -1;
+  background-color: #cccccc;
+
+
 }
 
 .topNavigation p {
-  font-size: 0.9rem;
-  margin-left: 1.2rem;
+  font-size: 1.5rem;
+  margin-left: 2.5rem;
   color: #ffffff;
+  font-family: 'Urbanist', sans-serif;
 }
 
 .topNavigation a {
@@ -366,8 +718,36 @@ width: 26rem;
 
 }
 
-.topNavigation p {
-  font-family: 'Roboto', sans-serif;
+.black {
+  background-color: black;
+}
+
+.parallelContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+
+}
+
+/*  */
+
+.Navigation h1 {
+  display: none;
+}
+
+.right {
+  width: 100%;
+}
+
+.Navigation {
+  display: none;
+}
+
+
+
+.topNavigation {
+
+  display: flex;
 }
 
 /* 響應式 */
@@ -389,12 +769,12 @@ width: 26rem;
     display: none;
   }
 
-  .right_navbar {
-    display: none;
-  }
+
 
   .topNavigation {
 
     display: flex;
   }
 }
+
+/*  */

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext"; // ch 11
 import { useAuthContext } from "../hooks/useAuthContext"; //ch n15
 import { YTvideos } from "../components/YoutudeApi";
+import { YTvideosUpComing } from "../components/YoutudeApiUpcomeing";
 import { TwtichVideos } from "../components/TwitchApi";
 import { LeftNavbar } from "../components/leftbar";
 import { TopNavigation } from "../components/topNavigation";
@@ -45,29 +46,48 @@ const Streaming = () => {
     logout();
   };
   return (
-    <div className="NewHome">
-      <div className="wrap">
-        {/* left Navigation bar 所有分頁開頭必須大寫*/}
-        <LeftNavbar />
-        <div className="right">
-          <TopNavigation />
-          <div className="rightInner">
-            <h1>streaming</h1>
-            {/* navbar */}
-            <div className="right_navbar">
-              {/* ch n13 then show user email in web */}
+    <div className="BackColorStream">
+      
+      <div className="NewHome">
+        <div className="wrap">
+          {/* left Navigation bar 所有分頁開頭必須大寫*/}
+          <LeftNavbar />
 
-              <button onClick={handleClick}>Log out</button>
-            </div>
-            <div className="context">
-              {workouts &&
-                workouts.map((workout) => (
-                  <YTvideos workout={workout} key={workout._id} />
-                ))}
-              {workouts &&
-                workouts.map((workout) => (
-                  <TwtichVideos workout={workout} key={workout._id} />
-                ))}
+          <div className="right">
+            {/* navbar */}
+            <TopNavigation />
+            <div className="rightInner">
+              {/* navbar */}
+              <div className="right_navbar">
+                {/* ch n13 then show user email in web */}
+
+                <button onClick={handleClick}>Log out</button>
+              </div>
+
+              <div className="context">
+                <div className="fromAndStream">
+                  <h1>streaming</h1>
+             
+                    {/* <h1>Youtube Videos</h1> */}
+                    {workouts &&
+                      workouts.map((workout) => (
+                        <YTvideos workout={workout} key={workout._id} />
+                      ))}
+                    {/* <h1>Twtich Videos</h1> */}
+                    {workouts &&
+                      workouts.map((workout) => (
+                        <TwtichVideos workout={workout} key={workout._id} />
+                      ))}
+        
+                  <h1>upcoming</h1>
+  
+                    {workouts &&
+                      workouts.map((workout) => (
+                        <YTvideosUpComing workout={workout} key={workout._id} />
+                      ))}
+                  </div>
+                </div>
+            
             </div>
           </div>
         </div>

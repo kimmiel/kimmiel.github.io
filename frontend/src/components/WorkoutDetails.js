@@ -33,76 +33,118 @@ const WorkoutDetails = ({ workout }) => {
       dispatch({ type: "DELETE_WORKOUT", payload: json });
     }
   };
-  console.log("workout1 " + JSON.stringify(workout));
-  return (
-    <div className="workout-details">
-      {/* YoutubeDatasBlock */}
-      <div className="YoutubeDatasBlock">
-        <div className="blockInner">
-          <div className="blockData">
-            <div className="circle">
-              {" "}
-              <p>K</p>
+
+  // return twitch or youtube 資料
+  if (workout.twitchId === "") {
+    return (
+      <div className="workout-details">
+        {/* YoutubeDatasBlock */}
+        <div className="block">
+          <div className="YoutubeDatasBlock">
+            <div className="blockInner">
+              <div className="dataType">
+                <p>Youtube</p>
+              </div>
+              <div className="blockData channelName">
+                <p>{workout.channalTitle}</p>
+              </div>
+              {/* <div className="blockData">
+              <div className="circle">
+                <p>youtube key</p>
+              </div>
+              <p>{workout.youtubeKey}</p>
+            </div> */}
+              {/* <div className="blockData">
+              <div className="circle">
+                <p>Channel Id</p>
+              </div>
+              <p>{workout.ChannelId}</p>
+            </div> */}
+
+              {/* deleteBlock */}
+              <div className="deleteBlock">
+                {/* 用date-fns去排版以下日期 addSuffix後缀 eg xxday ago */}
+                <p>
+                  {formatDistanceToNow(new Date(workout.createdAt), {
+                    addSuffix: true,
+                  })}
+                </p>
+                <div className="click">
+                  {/* ch14 material-symbols-outlined 是來自google icon libriy ,delete 也是來自libriy 的修件 */}
+                  {/* <span className="material-symbols-outlined" onClick={handleClick}> */}
+                  <span
+                    className="material-symbols-outlined"
+                    onClick={handleClick}
+                  >
+                    delete
+                  </span>
+                  {/* onClick 按下之後會執行handleClickfunction   //ch 12 dele function*/}
+                </div>
+              </div>
             </div>
-            <p>{workout.title}</p>
-          </div>
-          <div className="blockData">
-            <div className="circle">
-              {" "}
-              <p>I</p>
-            </div>
-            <p>{workout.load}</p>
           </div>
         </div>
       </div>
+    );
+  } else if (workout.channalTitle === "") {
+    return (
+      <div className="workout-details">
+        {/* twichDatasBlock */}
+        <div className="block">
+          <div className="twichDatasBlock">
+            <div className="blockInner">
+              <div className="dataType">
+                <p>twich</p>
+              </div>
 
-      {/* twichDatasBlock */}
-      <div className="twichDatasBlock">
-        <div className="blockInner">
-          <div className="blockData">
-            <div className="circle">
-              {" "}
-              <p>K</p>
-            </div>
-            <p>{workout.reps}</p>
-          </div>
+              <div className="blockData channelName">
+                <div className="circle"> </div>
+                <p>{workout.twitchchannel}</p>
+              </div>
 
-          <div className="blockData">
-            <div className="circle">
-              {" "}
-              <p>S</p>
-            </div>
-            <p>{workout.twitchSecret}</p>
-          </div>
+              {/* <div className="blockData">
+              <div className="circle">
+                {" "}
+                <p>Your Twitch Key</p>
+              </div>
+              <p>{workout.twitchId}</p>
+            </div> */}
 
-          <div className="blockData">
-            <div className="circle">
-              {" "}
-              <p>N</p>
+              {/* <div className="blockData">
+              <div className="circle">
+                {" "}
+                <p>Twitch Secret</p>
+              </div>
+              <p>{workout.twitchSecret}</p>
+            </div> */}
+
+              {/* deleteBlock */}
+              <div className="deleteBlock">
+                {/* 用date-fns去排版以下日期 addSuffix後缀 eg xxday ago */}
+                <p>
+                  {formatDistanceToNow(new Date(workout.createdAt), {
+                    addSuffix: true,
+                  })}
+                </p>
+                <div className="click">
+                  {/* ch14 material-symbols-outlined 是來自google icon libriy ,delete 也是來自libriy 的修件 */}
+                  {/* <span className="material-symbols-outlined" onClick={handleClick}> */}
+                  <span
+                    className="material-symbols-outlined"
+                    onClick={handleClick}
+                  >
+                    delete
+                  </span>
+                  {/* onClick 按下之後會執行handleClickfunction   //ch 12 dele function*/}
+                </div>
+              </div>
             </div>
-            <p>{workout.twitchchannel}</p>
           </div>
         </div>
       </div>
-
-      {/* deleteBlock */}
-      <div className="deleteBlock">
-        <div className="blockInner">
-          {/* 用date-fns去排版以下日期 addSuffix後缀 eg xxday ago */}
-          <p>
-            {formatDistanceToNow(new Date(workout.createdAt), {
-              addSuffix: true,
-            })}
-          </p>
-          {/* ch14 material-symbols-outlined 是來自google icon libriy ,delete 也是來自libriy 的修件 */}
-          <span className="material-symbols-outlined" onClick={handleClick}>
-            delete
-          </span>
-          {/* onClick 按下之後會執行handleClickfunction   //ch 12 dele function*/}
-        </div>
-      </div>
-    </div>
-  );
+    );
+  }
+  return <div className="workout-details"></div>;
 };
 
 export default WorkoutDetails;

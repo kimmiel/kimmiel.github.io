@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const getWorkouts = async (req, res) => {
   //ch n17限制只能拿自己造的workout
   const user_id = req.user.id;
-  //ch n17只能find自己造的workout  額外例子find({reps:20}),get所有reps:20的document
+  //ch n17只能find自己造的workout  額外例子find({twitchId:20}),get所有twitchId:20的document
   const workouts = await Workout.find({ user_id }).sort({ createdAt: -1 }); //按時間sort({createdAt: })降序顯示-1
   res.status(200).json(workouts);
 };
@@ -28,48 +28,57 @@ const getWorkout = async (req, res) => {
 //create new workout
 const createWorkout = async (req, res) => {
   // ch5 加上async变成異步
-  const { title, load, reps, twitchSecret, twitchchannel } = req.body; //ch5 設好req有咩屬性
+  const { youtubeKey, ChannelId, twitchId, channalTitle, twitchSecret, twitchchannel ,image} =
+    req.body; //ch5 設好req有咩屬性
 
   //ch 13 改error message 傳出的信息
   let emptyFields = [];
 
-  // if title is emtype
-  if (!title) {
-    emptyFields.push("title"); //array.push = 加上
-  }
-  // if load is emtype
-  if (!load) {
-    emptyFields.push("load");
-  }
-  // if reps is emtype
-  if (!reps) {
-    emptyFields.push("reps");
-  }
+  // // if title is emtype
+  // if (!youtubeKey) {
+  //   emptyFields.push("youtubeKey"); //array.push = 加上
+  // }
+  // // if ChannelId is emtype
+  // if (!ChannelId) {
+  //   emptyFields.push("ChannelId");
+  // }
 
-  if (!twitchSecret) {
-    emptyFields.push("twitchSecret");
-  }
+  // // if channalTitle is emtype
+  // if (!channalTitle) {
+  //   emptyFields.push("channalTitle");
+  // }
 
-  if (!twitchchannel) {
-    emptyFields.push("twitchchannel");
-  }
+  // // if twitchId is emtype
+  // if (!twitchId) {
+  //   emptyFields.push("twitchId");
+  // }
 
-  if (emptyFields.length > 0) {
-    // return error massege
-    return res
-      .status(400)
-      .json({ error: "Please fill in all the fields", emptyFields });
-  }
+  // if (!twitchSecret) {
+  //   emptyFields.push("twitchSecret");
+  // }
+
+  // if (!twitchchannel) {
+  //   emptyFields.push("twitchchannel");
+  // }
+
+  // if (emptyFields.length > 0) {
+  //   // return error massege
+  //   return res
+  //     .status(400)
+  //     .json({ error: "Please fill in all the fields", emptyFields });
+  // }
 
   //add new doc to datatbase
   try {
     const user_id = req.user._id; //ch n17在middleware獲得id
     const workout = await Workout.create({
-      title,
-      load,
-      reps,
+      youtubeKey,
+      ChannelId,
+      twitchId,
+      channalTitle,
       twitchchannel,
       twitchSecret,
+      image,
       user_id,
     }); //ch n17 user_id
     res.status(200).json(workout); //回覆成功

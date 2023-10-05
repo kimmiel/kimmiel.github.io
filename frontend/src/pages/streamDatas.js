@@ -5,6 +5,7 @@ import { YTvideos } from "../components/YoutudeApi";
 import { TwtichVideos } from "../components/TwitchApi";
 import { LeftNavbar } from "../components/leftbar";
 import { TopNavigation } from "../components/topNavigation";
+
 import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout"; //ch n11 get useLogout fountion
 
@@ -45,32 +46,45 @@ const StreamDatas = () => {
     logout();
   };
   return (
-    <div className="NewHome">
-      <div className="wrap">
-        {/* left Navigation bar 所有分頁開頭必須大寫*/}
-        <LeftNavbar />
-        <div className="right">
-        <TopNavigation/>
-        <div className="rightInner">
-          <h1>stream Datas</h1>
-          <div className="right_navbar">
-            {/* ch n13 then show user email in web */}
+    <body>
+    <div className="BackColorStreamData">
+      <div className="NewHome">
+        <div className="wrap">
+          {/* left Navigation bar 所有分頁開頭必須大寫*/}
+          <LeftNavbar />
 
-            <button onClick={handleClick}>Log out</button>
+          <div className="right">
+            {/* navbar */}
+            <TopNavigation />
+
+            <div className="rightInner">
+              {/* navbar */}
+              <div className="right_navbar">
+                {/* ch n13 then show user email in web */}
+
+                <button onClick={handleClick}>Log out</button>
+              </div>
+              <div className="context">
+                <div className="fromAndStream">
+                  {/* add data */}
+                  <div className="workouts ">
+                    {/* 單獨觸發workout並回傳資料名称 ch9*/}
+                    <div className="parallelContainer">
+                      {workouts &&
+                        workouts.map((workout) => (
+                          <WorkoutDetails workout={workout} key={workout._id} />
+                        ))}
+                    </div>
+                  </div>
+                  <WorkoutForm /> {/* ch 10 */}
+                </div>
+              </div>
+            </div>
           </div>
-          {/* add data */}
-          <div className="workouts">
-            {/* 單獨觸發workout並回傳資料名称 ch9*/}
-            {workouts &&
-              workouts.map((workout) => (
-                <WorkoutDetails workout={workout} key={workout._id} />
-              ))}
-          </div>
-          <WorkoutForm /> {/* ch 10 */}
-        </div>
         </div>
       </div>
     </div>
+    </body>
   );
 };
 

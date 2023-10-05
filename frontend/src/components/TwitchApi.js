@@ -5,7 +5,7 @@ const GET_TOKEN = "https://id.twitch.tv/oauth2/token";
 export const TwtichVideos = ({ workout }) => {
   // console.log("workout  Twtich " + JSON.stringify(workout));
 
-  const CLTENT_ID = workout.reps;
+  const CLTENT_ID = workout.twitchId;
   const CLTENT_SECRET = workout.twitchSecret;
 
   const [allvideosName, setAllvideosName] = useState([]);
@@ -51,17 +51,17 @@ export const TwtichVideos = ({ workout }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log("how much Data : " + data.data.length);
+         // console.log("how much Data : " + data.data.length);
           streamLength = data.data.length;
           stream = data;
-          console.log("length " + streamLength);
+        //  console.log("length " + streamLength);
           for (let i = 0; i < streamLength; i++) {
-            console.log(
-              "twich Data: " + i + " " + JSON.stringify(stream.data[i])
-            );
+            // console.log(
+            //   "twich Data: " + i + " " + JSON.stringify(stream.data[i])
+            // );
 
             streamArray.push(
-              `https://player.twitch.tv/?channel=${stream.data[i].user_login}&parent=www.example.com`
+              `https://player.twitch.tv/?autoplay=false&channel=${stream.data[i].user_login}&parent=localhost`
             );
           }
           setAllvideosName(streamArray);
@@ -77,21 +77,20 @@ export const TwtichVideos = ({ workout }) => {
 
   return (
     <div className="twtich">
-      <h1>Twtich Videos</h1>
+
       {allvideosName.map((item) => {
         //map() 會分配內存空間儲存新資料並返回， forEach() 不會回傳資料
-        console.log("item foreach : " + item);
+      //  console.log("item foreach : " + item);
         return (
-          <div>
+          <div >
             {" "}
             <iframe
-              width="620"
-              height="378"
+             width="400"
+             height="220"
               className="video"
               src={item}
               frameborder="0"
               allowfullscreen="false"
-              scrolling="no"
               title="youtude vidio"
             ></iframe>
           </div>

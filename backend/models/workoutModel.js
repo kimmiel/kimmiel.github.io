@@ -5,29 +5,34 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const workoutSchema = new Schema(
   {
-    title: {
+    youtubeKey: {
       type: String,
-      required: true,
-    },
-    reps: {
-      type: String,
-      required: true,
-    },
-    load: {
-      type: String,
-      required: true,
-    },
-    twitchSecret: 
-    {
-      type: String,
-      required: true,
-    },
-    twitchchannel: 
-      {
-        type: String,
-        required: true,
+      required: function () {
+        return this.ChannelId === 1;
       },
-    
+    },
+    ChannelId: {
+      type: String,
+    },
+
+    channalTitle: {
+      type: String,
+    },
+    twitchId: {
+      type: String,
+      required: function () {
+        return this.twitchSecret === 1;
+      },
+    },
+    twitchSecret: {
+      type: String,
+    },
+    twitchchannel: {
+      type: String,
+    },
+    image: {
+      type: String,
+    },
     // ch n17 workout記下創立它的用户id
     user_id: {
       type: String,
