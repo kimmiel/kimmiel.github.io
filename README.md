@@ -22,12 +22,7 @@
 ### 1.先在sign up 頁面注册
 ### 2.在login 頁面 login
 ### 3.在首頁的data欄位填入資料
->### 測試資料
->### youtube key: AIzaSyAuuvfn_e76jh6EPxi7uIDFBfPj1HZJ7Ig
->### Channel Id: UCIM92Ok_spNKLVB5TsgwseQ
->### Twitch Key: 1dzor0oyndgwy1nbxcm5by3yz08fw0
->### Twitch Secret: wmkol61mxnpyiry633kxqfe8m3dktu
->### Twitch Channel: skullrazor1
+
 
 # 1 網站規劃 
 
@@ -42,27 +37,16 @@
 ### 資料庫建立與資料傳遞
 ## 1.3 網站開發工具與使用程式語言
 ### 開發工具
-### Vscode
 
+### react.js
 ### Node.js
+
 ### 網站開發程式語言
 ### Html
-### Css Javascript
+### Css 
+### Javascript
+
 ### 資料庫
 ### mongodb
 
 
-# 2 報告制作網站以及相關技術的資料
-
-## 2.1 Node.js
-### Node.js 是一個免費的開源服務器環境，能在各種平台上運行
-### (Windows、Linux、Unix、Mac OS X 等)，Node.js 是運行在服務端的 JavaScript。Node.js 可以生成動態頁面內容，並創建、打開、讀取、 寫入、刪除和關閉服務器上的文件。以及可以收集表單數據，和數 據庫中添加、刪除、修改數據。
-
-## 2.2 mongodb
-### MongoDB 是一個開源的 NoSQL 數據庫管理程序。 NoSQL 被用作傳統
-### 關係數據庫的替代品。 NoSQL 數據庫對於處理大量分佈式數據非常 有用。 MongoDB 是一個可以管理面向文檔的信息、存儲或檢索信息 的工具。
-## 2.3 API
-### API 是 Application Programming Interface 的縮寫， API 通過為兩個程
-
-### 序或應用程序提供必要的工具和功能來幫助它們相互通信。 它接受 用戶的請求並將其發送給服務提供商，然後再次將服務提供商生成 的結果發送給所需的用戶。 可以在軟件或網站中廣泛使用 API，通 過使用 API 調用來實現各種功能，而無需為其編寫複雜的代碼。
-## 2.4 響應式網頁設計(Responsive Web Design) 響應式網頁設計可以根據視窗的大小，改變介面的排版。 令同一網 頁可以使用許多不同大小的設備查看，都可以有合適的介面，並且 令網頁在各類設備都可以易於使用。
